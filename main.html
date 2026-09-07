@@ -36,15 +36,6 @@
 }
 .hero .kv-logo-slot { width: 300px; height: 80px; }
 .hero .hero-title { font-size: 15px; font-weight: 600; color: #333; margin-top: -14px; }
-/* 播放按钮：点击弹框播放首页宣传视频 */
-.hero-play {
-  width: 72px; height: 72px; border-radius: 50%;
-  background: rgba(255,255,255,.92); border: 2px solid #1a1a1a;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 26px; color: #1a1a1a; cursor: pointer;
-  padding-left: 8px;
-}
-.hero-play:hover { background: #1a1a1a; color: #fff; }
 </style>
 </head>
 <body class="main-page">
@@ -58,7 +49,6 @@
     <a class="side-link" href="rewards.html">预注册奖励</a>
     <a class="side-link" href="worldview.html">世界观</a>
     <a class="side-link" href="goddess.html">女神介绍</a>
-    <a class="side-link" href="features.html">游戏特征</a>
     <a class="side-link" href="artwork.html">画廊</a>
     <a class="side-link" href="spec.html">运行环境</a>
     <div class="side-group-title">独立落地页</div>
@@ -86,7 +76,6 @@
       <div class="sub-nav">
         <a href="worldview.html">世界观</a>
         <a href="goddess.html">女神介绍</a>
-        <a href="features.html">游戏特征</a>
       </div>
     </div>
     <div class="nav-item has-sub">资料库
@@ -107,7 +96,6 @@
         <div class="slot-name">游戏 logo</div>
       </div>
       <div class="hero-title">游戏名</div>
-      <button class="hero-play" id="playBtn" aria-label="播放首页宣传视频">▶</button>
 
       <!-- 预注册表单：正式由 ClientGame Developer Site 生成后整段替换 -->
       <form class="prereg-block" action="https://player-registration.games.dmm.com/entry" method="post" id="pre_registration_form">
@@ -144,11 +132,6 @@
 </form>
 
 <footer class="site-footer">
-  <div class="footer-socials">
-    <a class="social-slot" href="#" target="_blank" title="社媒官号图标位">社媒</a>
-    <a class="social-slot" href="#" target="_blank" title="社媒官号图标位">社媒</a>
-    <a class="social-slot" href="#" target="_blank" title="社媒官号图标位">社媒</a>
-  </div>
   <div class="footer-links">
     <a href="#" target="_blank">游戏使用条款 &amp; 隐私政策</a>
     <a href="legal-sell.html" target="_blank">特定商业交易法</a>
@@ -158,25 +141,8 @@
   <div class="footer-copy">公司名称 + 版权声明</div>
 </footer>
 
-<!-- 首页宣传视频弹框 -->
-<div class="video-modal" id="videoModal">
-  <div class="modal-box">
-    <button class="modal-close" id="modalClose" aria-label="关闭">×</button>
-    <div class="slot video-frame" style="height: 520px;">
-      <div class="slot-name">首页宣传视频（弹框播放）</div>
-      <div class="slot-src">点击播放图标弹出，正式站嵌入视频播放器</div>
-    </div>
-  </div>
-</div>
-
 <script src="preview-nav.js"></script>
 <script>
-/* 首页宣传视频弹框 */
-var playBtn = document.getElementById('playBtn');
-var modal = document.getElementById('videoModal');
-playBtn.addEventListener('click', function(){ modal.classList.add('open'); });
-document.getElementById('modalClose').addEventListener('click', function(){ modal.classList.remove('open'); });
-modal.addEventListener('click', function(e){ if (e.target === this) this.classList.remove('open'); });
 /* 提交跳转（demo 模拟） */
 document.querySelectorAll('.prereg-block').forEach(function(f){
   f.addEventListener('submit', function(e){ e.preventDefault(); window.location.href='thanks.html'; });
