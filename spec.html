@@ -10,10 +10,9 @@
 <link rel="stylesheet" href="preview-nav.css">
 <style>
 .spec-wrap { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
-.spec-block { flex: 1 1 360px; max-width: 460px; background: #fff; border: 1px solid #c8cdd6; border-radius: 10px; padding: 24px 28px; }
-.spec-block h3 { font-size: 18px; font-weight: 700; margin-bottom: 16px; }
+.spec-block { width: 100%; max-width: 800px; background: #fff; border: 1px solid #c8cdd6; border-radius: 10px; padding: 24px 28px; }
 .spec-list { list-style: none; }
-.spec-list li { display: flex; padding: 10px 0; border-bottom: 1px solid #e2e5ea; font-size: 14px; line-height: 1.6; }
+.spec-list li { display: flex; padding: 10px 0; border-bottom: 1px solid #e2e5ea; font-size: 14px; line-height: 1.6; align-items: center; }
 .spec-list li:last-child { border-bottom: none; }
 .spec-list .k { width: 140px; flex: none; color: #555; font-weight: 600; }
 .spec-list .v { flex: 1; color: #1a1a1a; }
@@ -69,17 +68,6 @@
     <h2 class="section-title">运行环境</h2>
     <div class="spec-wrap">
       <div class="spec-block">
-        <h3>Windows</h3>
-        <ul class="spec-list">
-          <li><span class="k">操作系统（OS）</span><span class="v">【xxx 文案位】<span class="os-note">发布内容需精确到 bit</span></span></li>
-          <li><span class="k">CPU</span><span class="v">【xxx 以上】</span></li>
-          <li><span class="k">内存</span><span class="v">【xxx 以上】</span></li>
-          <li><span class="k">显卡</span><span class="v">【xxxx 以上】</span></li>
-          <li><span class="k">其他配置要求</span><span class="v">【xxxxx 以上】</span></li>
-        </ul>
-      </div>
-      <div class="spec-block">
-        <h3>Mac</h3>
         <ul class="spec-list">
           <li><span class="k">操作系统（OS）</span><span class="v">【xxx 文案位】<span class="os-note">发布内容需精确到 bit</span></span></li>
           <li><span class="k">CPU</span><span class="v">【xxx 以上】</span></li>
