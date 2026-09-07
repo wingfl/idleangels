@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>事前注册已完成</title>
+<title>错误页</title>
 <!-- DMM 专用标头 -->
 <link rel="stylesheet" href="general/dmmheader.css">
 <link rel="stylesheet" href="preview-nav.css">
@@ -14,11 +14,11 @@ body { font-family: "Yu Gothic", "Meiryo", sans-serif; background: #f5f6f8; colo
 .dmm-header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; height: 46px; padding: 0 24px; background: #fff; border-bottom: 2px solid #1a1a1a; display: flex; align-items: center; justify-content: space-between; }
 .dmm-header .dmm-logo { font-size: 17px; font-weight: 700; }
 /* 主体：满屏垂直居中 */
-.thanks-main { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 100px 40px 140px; text-align: center; }
-.thanks-title { font-size: 28px; font-weight: 700; }
-.thanks-desc { font-size: 15px; color: #555; line-height: 1.8; }
+.error-main { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 100px 40px 140px; text-align: center; }
+.error-title { font-size: 28px; font-weight: 700; }
+.error-desc { font-size: 15px; color: #555; line-height: 1.8; }
 .btn-back { padding: 13px 44px; font-size: 16px; font-weight: 600; background: #1a1a1a; color: #fff; border: none; border-radius: 8px; cursor: pointer; display: inline-block; text-decoration: none; }
-/* 页脚固定底部（与主站保持一致：白底 + 左侧社媒 + 居中链接） */
+/* 页脚固定底部（与主站保持一致） */
 .site-footer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 3; border-top: 1px solid #c8cdd6; background: #fff; padding: 14px 24px; }
 .footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 14px; }
 .footer-links a { color: #555; font-size: 14px; text-decoration: none; }
@@ -40,11 +40,11 @@ body { font-family: "Yu Gothic", "Meiryo", sans-serif; background: #f5f6f8; colo
     <a class="side-link" href="artwork.html">资料室</a>
     <a class="side-link" href="spec.html">运行环境</a>
     <div class="side-group-title">独立落地页</div>
-    <a class="side-link active" href="thanks.html">感谢页</a>
+    <a class="side-link" href="thanks.html">感谢页</a>
     <a class="side-link" href="registered.html">完毕页</a>
+    <a class="side-link active" href="error.html">错误页</a>
     <a class="side-link" href="legal-sell.html">特定商业交易法</a>
     <a class="side-link" href="legal-fund.html">资金结算法</a>
-    <a class="side-link" href="error.html">错误页</a>
     <a class="side-link" href="contact.html">联系我们</a>
   </nav>
   <button class="side-toggle" id="sideToggle" title="展开/收起预览目录">收起</button>
@@ -52,9 +52,9 @@ body { font-family: "Yu Gothic", "Meiryo", sans-serif; background: #f5f6f8; colo
   <header class="dmm-header">
     <div class="dmm-logo">DMM GAMES 标头（模拟占位）</div>
   </header>
-  <main class="thanks-main">
-    <h1 class="thanks-title">事前注册已完成</h1>
-    <p class="thanks-desc">敬请期待服务开始</p>
+  <main class="error-main">
+    <h1 class="error-title">页面无法显示</h1>
+    <p class="error-desc">服务器或网络发生错误，无法显示此页面。【错误文案位：待补充】</p>
     <a class="btn-back" href="index.html">返回首页</a>
   </main>
   <footer class="site-footer">
