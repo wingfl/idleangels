@@ -31,8 +31,10 @@
 .char-art.slide-out-right { transform: translateX(60px); opacity: 0; }
 .char-info-col { flex: 1; min-width: 0; padding-top: 8px; }
 .char-name { font-size: 36px; font-weight: 700; margin-bottom: 16px; min-height: 48px; }
-.char-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; min-height: 32px; }
+.char-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; min-height: 32px; }
 .char-tags span { font-size: 14px; color: #666; background: #fff; border: 1px solid #c8cdd6; padding: 5px 18px; border-radius: 40px; }
+.char-meta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 16px; font-size: 14px; color: #666; min-height: 20px; }
+.char-meta span { color: #444; white-space: nowrap; }
 .char-desc { font-size: 15px; color: #555; line-height: 2; margin-bottom: 24px; height: 180px; overflow-y: auto; background: #fff; border: 1px solid #c8cdd6; border-radius: 8px; padding: 16px 18px; }
 .char-carousel { display: flex; align-items: center; gap: 14px; margin-top: 28px; justify-content: center; }
 .arr-btn { width: 44px; height: 44px; border-radius: 50%; flex: none; background: #fff; border: 1px solid #c8cdd6; color: #1a1a1a; font-size: 20px; cursor: pointer; line-height: 1; }
@@ -60,7 +62,7 @@
     <a class="side-link" href="worldview.html">世界观</a>
     <a class="side-link active" href="goddess.html">女神介绍</a>
     <a class="side-link" href="features.html">游戏特征</a>
-    <a class="side-link" href="artwork.html">资料室</a>
+    <a class="side-link" href="artwork.html">画廊</a>
     <a class="side-link" href="spec.html">运行环境</a>
     <div class="side-group-title">独立落地页</div>
     <a class="side-link" href="thanks.html">感谢页</a>
@@ -79,7 +81,7 @@
 <nav class="site-nav">
   <div class="nav-row">
     <div class="nav-logo"><div class="slot" style="width:auto;min-width:90px;padding:6px 12px;border-radius:6px;white-space:nowrap;"><span class="slot-name" style="font-size:14px;white-space:nowrap;">游戏logo</span></div></div>
-    <a class="nav-item" href="main.html">Main</a>
+    <a class="nav-item" href="main.html">首页</a>
     <a class="nav-item" href="rewards.html">预注册奖励</a>
     <div class="nav-item has-sub">游戏介绍
       <div class="sub-nav">
@@ -88,8 +90,8 @@
         <a href="features.html">游戏特征</a>
       </div>
     </div>
-    <div class="nav-item has-sub">资料室
-      <div class="sub-nav"><a href="artwork.html">Art Work</a></div>
+    <div class="nav-item has-sub">画廊
+      <div class="sub-nav"><a href="artwork.html">画廊</a></div>
     </div>
     <a class="nav-item" href="spec.html">运行环境</a>
   </div>
@@ -148,6 +150,7 @@
 var PANTHEONS = ['greek', 'norse', 'korean', 'chinese', 'japanese', 'hebrew', 'egyptian', 'celestial'];
 var CHAR_COUNTS = [4, 4, 3, 4, 4, 4, 4, 4];
 var CHAR_TAGS = ['【角色阵营】', '【角色性格1】', '【角色性格2】', '【角色性格3】'];
+var CHAR_META = '【MBTI 人格】 / 【身高】cm / B·W·H【三围】';
 var curPantheon = 'greek';
 var curIdx = 0;
 
@@ -175,6 +178,7 @@ function renderStage() {
     + '<div class="char-info-col">'
     + '<div class="char-name">' + name + '</div>'
     + '<div class="char-tags">' + tags + '</div>'
+    + '<div class="char-meta"><span>' + CHAR_META + '</span></div>'
     + '<div class="char-desc">' + desc + '</div>'
     + '<div class="char-carousel">'
     + '<button class="arr-btn" id="prevBtn" aria-label="上一个角色">‹</button>'
