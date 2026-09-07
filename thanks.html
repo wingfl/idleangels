@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>事前注册已完成</title>
+<!-- DMM 专用标头 -->
+<link rel="stylesheet" href="general/dmmheader.css">
+<link rel="stylesheet" href="preview-nav.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Yu Gothic", "Meiryo", sans-serif; background: #f5f6f8; color: #1a1a1a; }
+/* DMM 专用标头模拟占位（正式接入替换官方模板，样式不可改） */
+.dmm-header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; height: 46px; padding: 0 24px; background: #fff; border-bottom: 2px solid #1a1a1a; display: flex; align-items: center; justify-content: space-between; }
+.dmm-header .dmm-logo { font-size: 17px; font-weight: 700; }
+/* 主体：满屏垂直居中 */
+.thanks-main { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 100px 40px 140px; text-align: center; }
+.thanks-title { font-size: 28px; font-weight: 700; }
+.thanks-desc { font-size: 15px; color: #555; line-height: 1.8; }
+.btn-back { padding: 13px 44px; font-size: 16px; font-weight: 600; background: #1a1a1a; color: #fff; border: none; border-radius: 8px; cursor: pointer; display: inline-block; text-decoration: none; }
+/* 页脚固定底部（与主站保持一致：白底 + 左侧社媒 + 居中链接） */
+.site-footer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 3; border-top: 1px solid #c8cdd6; background: #fff; padding: 14px 24px; }
+.footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 14px; }
+.footer-links a { color: #555; font-size: 14px; text-decoration: none; }
+.footer-copy { text-align: center; font-size: 13px; color: #777; }
+.footer-socials { position: absolute; left: 24px; top: 50%; transform: translateY(-50%); display: flex; gap: 10px; }
+.social-slot { height: 40px; padding: 0 16px; border-radius: 20px; background: #e2e5ea; border: 2px dashed #9aa3b2; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #333; text-decoration: none; }
+</style>
+</head>
+<body>
+<!-- ═══ DEMO 预览导航器（全站入口）═══ -->
+<aside class="demo-side" id="demoSide">
+  <nav class="side-body">
+    <div class="side-title">DEMO 预览导航</div>
+    <div class="side-group-title">官网页面</div>
+    <a class="side-link" href="main.html">首页</a>
+    <a class="side-link" href="rewards.html">预注册奖励</a>
+    <a class="side-link" href="worldview.html">世界观</a>
+    <a class="side-link" href="goddess.html">女神介绍</a>
+    <a class="side-link" href="features.html">游戏特征</a>
+    <a class="side-link" href="artwork.html">资料室</a>
+    <a class="side-link" href="spec.html">运行环境</a>
+    <div class="side-group-title">独立落地页</div>
+    <a class="side-link active" href="thanks.html">感谢页</a>
+    <a class="side-link" href="registered.html">完毕页</a>
+    <a class="side-link" href="legal-sell.html">特定商业交易法</a>
+    <a class="side-link" href="legal-fund.html">资金结算法</a>
+    <a class="side-link" href="contact.html">联系我们</a>
+  </nav>
+  <button class="side-toggle" id="sideToggle" title="展开/收起预览目录">收起</button>
+</aside>
+  <header class="dmm-header">
+    <div class="dmm-logo">DMM GAMES 标头（模拟占位）</div>
+  </header>
+  <main class="thanks-main">
+    <h1 class="thanks-title">事前注册已完成</h1>
+    <p class="thanks-desc">敬请期待服务开始</p>
+    <a class="btn-back" href="index.html">返回首页</a>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-socials">
+      <a class="social-slot" href="#" target="_blank" title="社媒官号图标位">社媒</a>
+      <a class="social-slot" href="#" target="_blank" title="社媒官号图标位">社媒</a>
+      <a class="social-slot" href="#" target="_blank" title="社媒官号图标位">社媒</a>
+    </div>
+    <div class="footer-links">
+      <a href="#" target="_blank">游戏使用条款 &amp; 隐私政策</a>
+      <a href="legal-sell.html" target="_blank">特定商业交易法</a>
+      <a href="legal-fund.html" target="_blank">资金结算法</a>
+      <a href="contact.html" target="_blank">联系我们</a>
+    </div>
+    <div class="footer-copy">公司名称 + 版权声明</div>
+  </footer>
+<script src="preview-nav.js"></script>
+</body>
+</html>

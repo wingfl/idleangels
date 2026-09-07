@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DMM 预注册官网 · Demo 目录</title>
+<link rel="stylesheet" href="preview-nav.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  background: #f0f2f6; color: #1a1a1a;
+  min-height: 100vh;
+}
+.dir-main {
+  max-width: 1100px; margin: 0 auto;
+  padding: 60px 40px 80px;
+}
+.dir-title { font-size: 30px; font-weight: 700; margin-bottom: 8px; }
+.dir-sub { font-size: 14px; color: #777; margin-bottom: 40px; }
+.dir-group { margin-bottom: 40px; }
+.dir-group-title { font-size: 18px; font-weight: 700; margin-bottom: 14px; padding-left: 10px; border-left: 4px solid #c00a2f; }
+.dir-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
+.dir-card {
+  display: flex; align-items: center; justify-content: space-between;
+  background: #fff; border: 1px solid #d5d9e0; border-radius: 10px;
+  padding: 16px 18px; text-decoration: none; color: #1a1a1a;
+  transition: border-color .2s ease, transform .2s ease;
+}
+.dir-card:hover { border-color: #c00a2f; transform: translateY(-2px); }
+.dir-card .name { font-size: 16px; font-weight: 600; }
+.dir-card .file { font-size: 13px; color: #999; }
+</style>
+</head>
+<body>
+
+<!-- ═══ DEMO 预览导航器（全站入口/索引，见各页）═══ -->
+<aside class="demo-side" id="demoSide">
+  <nav class="side-body">
+    <div class="side-title">DEMO 预览导航</div>
+    <div class="side-group-title">官网页面</div>
+    <a class="side-link" href="main.html">首页</a>
+    <a class="side-link" href="rewards.html">预注册奖励</a>
+    <a class="side-link" href="worldview.html">世界观</a>
+    <a class="side-link" href="goddess.html">女神介绍</a>
+    <a class="side-link" href="features.html">游戏特征</a>
+    <a class="side-link" href="artwork.html">资料室</a>
+    <a class="side-link" href="spec.html">运行环境</a>
+    <div class="side-group-title">独立落地页</div>
+    <a class="side-link" href="thanks.html">感谢页</a>
+    <a class="side-link" href="registered.html">完毕页</a>
+    <a class="side-link" href="legal-sell.html">特定商业交易法</a>
+    <a class="side-link" href="legal-fund.html">资金结算法</a>
+    <a class="side-link" href="contact.html">联系我们</a>
+  </nav>
+  <button class="side-toggle" id="sideToggle" title="展开/收起预览目录">收起</button>
+</aside>
+
+<main class="dir-main">
+  <h1 class="dir-title">DMM 预注册官网 · Demo 目录</h1>
+  <p class="dir-sub">原型预览：左侧侧边栏为全站入口，可跳转任意页面。</p>
+
+  <section class="dir-group">
+    <h2 class="dir-group-title">官网页面</h2>
+    <div class="dir-grid">
+      <a class="dir-card" href="main.html"><span class="name">首页 Main</span><span class="file">main.html</span></a>
+      <a class="dir-card" href="rewards.html"><span class="name">预注册奖励</span><span class="file">rewards.html</span></a>
+      <a class="dir-card" href="worldview.html"><span class="name">世界观</span><span class="file">worldview.html</span></a>
+      <a class="dir-card" href="goddess.html"><span class="name">女神介绍</span><span class="file">goddess.html</span></a>
+      <a class="dir-card" href="features.html"><span class="name">游戏特征</span><span class="file">features.html</span></a>
+      <a class="dir-card" href="artwork.html"><span class="name">资料室 Art Work</span><span class="file">artwork.html</span></a>
+      <a class="dir-card" href="spec.html"><span class="name">运行环境</span><span class="file">spec.html</span></a>
+    </div>
+  </section>
+
+  <section class="dir-group">
+    <h2 class="dir-group-title">独立落地页</h2>
+    <div class="dir-grid">
+      <a class="dir-card" href="thanks.html"><span class="name">感谢页</span><span class="file">thanks.html</span></a>
+      <a class="dir-card" href="registered.html"><span class="name">完毕页</span><span class="file">registered.html</span></a>
+      <a class="dir-card" href="legal-sell.html"><span class="name">特定商业交易法</span><span class="file">legal-sell.html</span></a>
+      <a class="dir-card" href="legal-fund.html"><span class="name">资金结算法</span><span class="file">legal-fund.html</span></a>
+      <a class="dir-card" href="contact.html"><span class="name">联系我们</span><span class="file">contact.html</span></a>
+    </div>
+  </section>
+</main>
+
+<script src="preview-nav.js"></script>
+</body>
+</html>

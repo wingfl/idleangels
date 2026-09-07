@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>资料室 Art Work · DMM 预注册官网</title>
+<script src="https://libs.games.dmm.com/js/dmg_i3_tracking_tag.js"></script>
+<link rel="stylesheet" href="general/dmmheader.css">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="preview-nav.css">
+<style>
+#page-artwork { height: 100vh; overflow: hidden; box-sizing: border-box; }
+#page-artwork .section { justify-content: flex-start; overflow: hidden; padding-top: 24px; }
+#page-artwork .art-wrap { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+#page-artwork .art-panel.active { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+#page-artwork .wall-grid { flex: 1; grid-template-rows: repeat(3, minmax(0, 1fr)); min-height: 0; }
+#page-artwork .wall-item { display: flex; flex-direction: column; }
+#page-artwork .wall-item .slot { height: auto; flex: 1; min-height: 0; }
+
+.wall-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.wall-item { border: 1px solid #c8cdd6; border-radius: 10px; overflow: hidden; background: #fff; }
+.wall-item .slot { border-radius: 0; border-left: none; border-right: none; border-top: none; height: 160px; }
+.art-tabs { display: flex; gap: 8px; margin: 0 0 14px; }
+.art-tab { padding: 10px 30px; background: #fff; border: 1px solid #c8cdd6; border-radius: 8px; cursor: pointer; font-size: 15px; color: #333; }
+.art-tab.active { background: #1a1a1a; color: #fff; }
+.char-filter { display: flex; gap: 8px; margin: 0 0 12px; }
+.char-tab { padding: 6px 18px; background: #fff; border: 1px solid #c8cdd6; border-radius: 16px; cursor: pointer; font-size: 14px; color: #666; }
+.char-tab.active { background: #c00a2f; color: #fff; border-color: #c00a2f; }
+.art-panel { display: none; }
+.art-panel.active { display: block; }
+.art-pager { display: flex; justify-content: center; gap: 6px; margin-top: 14px; }
+.art-pager .pg { width: 34px; height: 34px; border: 1px solid #c8cdd6; background: #fff; color: #333; border-radius: 6px; cursor: pointer; font-size: 14px; }
+.art-pager .pg.active { background: #1a1a1a; color: #fff; }
+.wl-actions { display: flex; gap: 8px; padding: 10px; justify-content: center; }
+.wl-btn { padding: 8px 20px; background: #fff; border: 1px solid #c8cdd6; border-radius: 6px; cursor: pointer; font-size: 13px; color: #333; }
+.wl-btn:hover { background: #1a1a1a; color: #fff; }
+.wall-item.clickable { cursor: pointer; }
+.wall-item.clickable:hover { border-color: #1a1a1a; }
+/* 素材预览弹框 */
+.art-preview-box { max-width: 700px; padding: 0; overflow: hidden; }
+.art-preview-bar { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; background: #1a1a1a; color: #fff; }
+.art-preview-title { font-size: 15px; font-weight: 600; }
+.art-preview-actions { display: flex; gap: 10px; }
+.art-dl-btn { padding: 6px 20px; background: #c00a2f; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; }
+.art-dl-btn:hover { background: #a00; }
+.art-preview-body { padding: 20px; }
+</style>
+</head>
+<body>
+
+<aside class="demo-side" id="demoSide">
+  <nav class="side-body">
+    <div class="side-title">DEMO 预览导航</div>
+    <div class="side-group-title">官网页面</div>
+    <a class="side-link" href="main.html">首页</a>
+    <a class="side-link" href="rewards.html">预注册奖励</a>
+    <a class="side-link" href="worldview.html">世界观</a>
+    <a class="side-link" href="goddess.html">女神介绍</a>
+    <a class="side-link" href="features.html">游戏特征</a>
+    <a class="side-link active" href="artwork.html">资料室</a>
+    <a class="side-link" href="spec.html">运行环境</a>
+    <div class="side-group-title">独立落地页</div>
+    <a class="side-link" href="thanks.html">感谢页</a>
+    <a class="side-link" href="registered.html">完毕页</a>
+    <a class="side-link" href="legal-sell.html">特定商业交易法</a>
+    <a class="side-link" href="legal-fund.html">资金结算法</a>
+    <a class="side-link" href="contact.html">联系我们</a>
+  </nav>
+  <button class="side-toggle" id="sideToggle" title="展开/收起预览目录">收起</button>
+</aside>
+
+<header class="dmm-header">
+  <div class="dmm-logo">DMM GAMES 标头（模拟占位）</div>
+</header>
+
+<nav class="site-nav">
+  <div class="nav-row">
+    <div class="nav-logo"><div class="slot" style="width:auto;min-width:90px;padding:6px 12px;border-radius:6px;white-space:nowrap;"><span class="slot-name" style="font-size:14px;white-space:nowrap;">游戏logo</span></div></div>
+    <a class="nav-item" href="main.html">Main</a>
+    <a class="nav-item" href="rewards.html">预注册奖励</a>
+    <div class="nav-item has-sub">游戏介绍
+      <div class="sub-nav">
+        <a href="worldview.html">世界观</a>
+        <a href="goddess.html">女神介绍</a>
+        <a href="features.html">游戏特征</a>
+      </div>
+    </div>
+    <div class="nav-item has-sub">资料室
+      <div class="sub-nav"><a class="active" href="artwork.html">Art Work</a></div>
+    </div>
+    <a class="nav-item" href="spec.html">运行环境</a>
+  </div>
+  <div class="sub-panel" aria-hidden="true"></div>
+</nav>
+
+<div id="page-artwork" class="page-panel">
+  <section class="section">
+    <h2 class="section-title">Art Work</h2>
+
+    <div class="art-tabs" id="artTabs">
+      <button class="art-tab active" data-art="wall">壁纸</button>
+      <button class="art-tab" data-art="emoji">表情</button>
+      <button class="art-tab" data-art="artraw">原画</button>
+    </div>
+
+    <div class="art-wrap">
+
+    <div class="art-panel active" data-art="wall" data-label="壁纸">
+      <div class="wall-grid">
+        <div class="wall-item" data-preview="壁纸 1"><div class="slot"><div class="slot-name">壁纸 1</div></div><div class="wl-actions"><button class="wl-btn">1920×1080</button><button class="wl-btn">1080×1920</button></div></div>
+        <div class="wall-item" data-preview="壁纸 2"><div class="slot"><div class="slot-name">壁纸 2</div></div><div class="wl-actions"><button class="wl-btn">1920×1080</button><button class="wl-btn">1080×1920</button></div></div>
+        <div class="wall-item" data-preview="壁纸 3"><div class="slot"><div class="slot-name">壁纸 3</div></div><div class="wl-actions"><button class="wl-btn">1920×1080</button><button class="wl-btn">1080×1920</button></div></div>
+        <div class="wall-item" data-preview="壁纸 4"><div class="slot"><div class="slot-name">壁纸 4</div></div><div class="wl-actions"><button class="wl-btn">1920×1080</button><button class="wl-btn">1080×1920</button></div></div>
+        <div class="wall-item" data-preview="壁纸 5"><div class="slot"><div class="slot-name">壁纸 5</div></div><div class="wl-actions"><button class="wl-btn">1920×1080</button><button class="wl-btn">1080×1920</button></div></div>
+        <div class="wall-item" data-preview="壁纸 6"><div class="slot"><div class="slot-name">壁纸 6</div></div><div class="wl-actions"><button class="wl-btn">1920×1080</button><button class="wl-btn">1080×1920</button></div></div>
+        <div class="wall-item" data-preview="壁纸 7"><div class="slot"><div class="slot-name">壁纸 7</div></div><div class="wl-actions"><button class="wl-btn">1920×1080</button><button class="wl-btn">1080×1920</button></div></div>
+        <div class="wall-item" data-preview="壁纸 8"><div class="slot"><div class="slot-name">壁纸 8</div></div><div class="wl-actions"><button class="wl-btn">1920×1080</button><button class="wl-btn">1080×1920</button></div></div>
+        <div class="wall-item" data-preview="壁纸 9"><div class="slot"><div class="slot-name">壁纸 9</div></div><div class="wl-actions"><button class="wl-btn">1920×1080</button><button class="wl-btn">1080×1920</button></div></div>
+        <div class="wall-item" data-preview="壁纸 10"><div class="slot"><div class="slot-name">壁纸 10</div></div><div class="wl-actions"><button class="wl-btn">1920×1080</button><button class="wl-btn">1080×1920</button></div></div>
+        <div class="wall-item" data-preview="壁纸 11"><div class="slot"><div class="slot-name">壁纸 11</div></div><div class="wl-actions"><button class="wl-btn">1920×1080</button><button class="wl-btn">1080×1920</button></div></div>
+        <div class="wall-item" data-preview="壁纸 12"><div class="slot"><div class="slot-name">壁纸 12</div></div><div class="wl-actions"><button class="wl-btn">1920×1080</button><button class="wl-btn">1080×1920</button></div></div>
+      </div>
+      <div class="art-pager">
+        <button class="pg" data-nav="-1" aria-label="上一页">&#8249;</button>
+        <button class="pg active" data-page="1">1</button>
+        <button class="pg" data-page="2">2</button>
+        <button class="pg" data-page="3">3</button>
+        <button class="pg" data-nav="1" aria-label="下一页">&#8250;</button>
+      </div>
+    </div>
+
+    <div class="art-panel" data-art="emoji" data-label="表情">
+      <div class="char-filter">
+        <button class="char-tab active" data-char="all">全部</button>
+        <button class="char-tab" data-char="c1">角色 1</button>
+        <button class="char-tab" data-char="c2">角色 2</button>
+        <button class="char-tab" data-char="c3">角色 3</button>
+      </div>
+      <div class="wall-grid">
+        <div class="wall-item clickable" data-preview="表情 1"><div class="slot"><div class="slot-name">表情 1</div></div></div>
+        <div class="wall-item clickable" data-preview="表情 2"><div class="slot"><div class="slot-name">表情 2</div></div></div>
+        <div class="wall-item clickable" data-preview="表情 3"><div class="slot"><div class="slot-name">表情 3</div></div></div>
+        <div class="wall-item clickable" data-preview="表情 4"><div class="slot"><div class="slot-name">表情 4</div></div></div>
+        <div class="wall-item clickable" data-preview="表情 5"><div class="slot"><div class="slot-name">表情 5</div></div></div>
+        <div class="wall-item clickable" data-preview="表情 6"><div class="slot"><div class="slot-name">表情 6</div></div></div>
+        <div class="wall-item clickable" data-preview="表情 7"><div class="slot"><div class="slot-name">表情 7</div></div></div>
+        <div class="wall-item clickable" data-preview="表情 8"><div class="slot"><div class="slot-name">表情 8</div></div></div>
+        <div class="wall-item clickable" data-preview="表情 9"><div class="slot"><div class="slot-name">表情 9</div></div></div>
+        <div class="wall-item clickable" data-preview="表情 10"><div class="slot"><div class="slot-name">表情 10</div></div></div>
+        <div class="wall-item clickable" data-preview="表情 11"><div class="slot"><div class="slot-name">表情 11</div></div></div>
+        <div class="wall-item clickable" data-preview="表情 12"><div class="slot"><div class="slot-name">表情 12</div></div></div>
+      </div>
+      <div class="art-pager">
+        <button class="pg" data-nav="-1" aria-label="上一页">&#8249;</button>
+        <button class="pg active" data-page="1">1</button>
+        <button class="pg" data-page="2">2</button>
+        <button class="pg" data-page="3">3</button>
+        <button class="pg" data-nav="1" aria-label="下一页">&#8250;</button>
+      </div>
+    </div>
+
+    <div class="art-panel" data-art="artraw" data-label="原画">
+      <div class="wall-grid">
+        <div class="wall-item clickable" data-preview="原画 1"><div class="slot"><div class="slot-name">原画 1</div></div></div>
+        <div class="wall-item clickable" data-preview="原画 2"><div class="slot"><div class="slot-name">原画 2</div></div></div>
+        <div class="wall-item clickable" data-preview="原画 3"><div class="slot"><div class="slot-name">原画 3</div></div></div>
+        <div class="wall-item clickable" data-preview="原画 4"><div class="slot"><div class="slot-name">原画 4</div></div></div>
+        <div class="wall-item clickable" data-preview="原画 5"><div class="slot"><div class="slot-name">原画 5</div></div></div>
+        <div class="wall-item clickable" data-preview="原画 6"><div class="slot"><div class="slot-name">原画 6</div></div></div>
+        <div class="wall-item clickable" data-preview="原画 7"><div class="slot"><div class="slot-name">原画 7</div></div></div>
+        <div class="wall-item clickable" data-preview="原画 8"><div class="slot"><div class="slot-name">原画 8</div></div></div>
+        <div class="wall-item clickable" data-preview="原画 9"><div class="slot"><div class="slot-name">原画 9</div></div></div>
+        <div class="wall-item clickable" data-preview="原画 10"><div class="slot"><div class="slot-name">原画 10</div></div></div>
+        <div class="wall-item clickable" data-preview="原画 11"><div class="slot"><div class="slot-name">原画 11</div></div></div>
+        <div class="wall-item clickable" data-preview="原画 12"><div class="slot"><div class="slot-name">原画 12</div></div></div>
+      </div>
+      <div class="art-pager">
+        <button class="pg" data-nav="-1" aria-label="上一页">&#8249;</button>
+        <button class="pg active" data-page="1">1</button>
+        <button class="pg" data-page="2">2</button>
+        <button class="pg" data-page="3">3</button>
+        <button class="pg" data-nav="1" aria-label="下一页">&#8250;</button>
+      </div>
+    </div>
+
+    </div><!-- /art-wrap -->
+  </section>
+</div>
+
+<form class="float-prereg" action="https://player-registration.games.dmm.com/entry" method="post">
+  <input type="hidden" name="app_id" value="demo_app_id">
+  <input type="hidden" name="finish_url" value="https://dmg.example.com/thanks.html">
+  <input type="hidden" name="registered_url" value="https://dmg.example.com/registered.html">
+  <input type="hidden" name="param_hash" value="demo_hash">
+  <button type="submit" class="btn-prereg-circle" aria-label="事前注册">事前注册</button>
+  <label class="float-notice notice-check"><input type="checkbox" name="notice" value="1"><span>接收通知邮件</span></label>
+</form>
+
+<footer class="site-footer">
+  <div class="footer-socials">
+    <a class="social-slot" href="#" target="_blank" title="社媒官号图标位">社媒</a>
+    <a class="social-slot" href="#" target="_blank" title="社媒官号图标位">社媒</a>
+    <a class="social-slot" href="#" target="_blank" title="社媒官号图标位">社媒</a>
+  </div>
+  <div class="footer-links">
+    <a href="#" target="_blank">游戏使用条款 &amp; 隐私政策</a>
+    <a href="legal-sell.html" target="_blank">特定商业交易法</a>
+    <a href="legal-fund.html" target="_blank">资金结算法</a>
+    <a href="contact.html" target="_blank">联系我们</a>
+  </div>
+  <div class="footer-copy">公司名称 + 版权声明</div>
+</footer>
+
+<!-- 素材预览弹框 -->
+<div class="video-modal" id="artPreviewModal">
+  <div class="modal-box art-preview-box">
+    <div class="art-preview-bar">
+      <span class="art-preview-title" id="artPreviewTitle">壁纸 1</span>
+      <div class="art-preview-actions">
+        <button class="art-dl-btn" id="artDlBtn">下载</button>
+        <button class="modal-close" id="artPreviewClose" aria-label="关闭" style="position:static;border-radius:6px;width:auto;height:36px;padding:0 20px;font-size:14px;">关闭</button>
+      </div>
+    </div>
+    <div class="art-preview-body">
+      <div class="slot" style="width:100%;height:400px;border-radius:0;"><div class="slot-name" id="artPreviewName">壁纸 1</div></div>
+    </div>
+  </div>
+</div>
+
+<script src="preview-nav.js"></script>
+<script>
+/* Art Work：tab 切换 + 分页 */
+(function() {
+  var tabsEl = document.getElementById('artTabs');
+  tabsEl.addEventListener('click', function(e) {
+    var tb = e.target.closest('.art-tab'); if (!tb) return;
+    document.querySelectorAll('.art-tab').forEach(function(x){ x.classList.toggle('active', x === tb); });
+    var art = tb.dataset.art;
+    document.querySelectorAll('.art-panel').forEach(function(p){ p.classList.toggle('active', p.dataset.art === art); });
+  });
+  /* 表情角色筛选 */
+  var emojiPanel = document.querySelector('.art-panel[data-art="emoji"]');
+  emojiPanel.querySelectorAll('.char-tab').forEach(function(ct) {
+    ct.addEventListener('click', function() {
+      emojiPanel.querySelectorAll('.char-tab').forEach(function(x){ x.classList.toggle('active', x === ct); });
+      var charName = ct.textContent.trim();
+      var grid = emojiPanel.querySelector('.wall-grid');
+      var items = grid.querySelectorAll('.wall-item');
+      items.forEach(function(it, i) {
+        var name = charName + ' 表情 ' + (i + 1);
+        it.dataset.preview = name;
+        var sn = it.querySelector('.slot-name');
+        if (sn) sn.textContent = name;
+      });
+      var pager = emojiPanel.querySelector('.art-pager');
+      pager.querySelectorAll('.pg').forEach(function(x){ x.classList.toggle('active', x.dataset.page === '1'); });
+    });
+  });
+  document.querySelectorAll('.art-pager').forEach(function(pager) {
+    pager.addEventListener('click', function(e) {
+      var b = e.target.closest('.pg'); if (!b) return;
+      var panel = pager.closest('.art-panel');
+      var label = panel.dataset.label;
+      var page;
+      if (b.dataset.nav) {
+        var cur = parseInt(pager.querySelector('.pg.active').dataset.page, 10);
+        var max = pager.querySelectorAll('.pg[data-page]').length;
+        page = cur + parseInt(b.dataset.nav, 10);
+        if (page < 1 || page > max) return;
+      } else {
+        page = parseInt(b.dataset.page, 10);
+      }
+      pager.querySelectorAll('.pg[data-page]').forEach(function(x){ x.classList.toggle('active', parseInt(x.dataset.page, 10) === page); });
+      var items = panel.querySelectorAll('.wall-item .slot-name');
+      items.forEach(function(n, i) {
+        n.textContent = label + ' ' + ((page - 1) * items.length + (i + 1));
+      });
+    });
+  });
+})();
+
+/* Art Work 预览弹框 */
+(function() {
+  var box = document.getElementById('artPreviewModal');
+  var title = document.getElementById('artPreviewTitle');
+  var name = document.getElementById('artPreviewName');
+  function open(label) { title.textContent = label; name.textContent = label; box.classList.add('open'); }
+  document.getElementById('artPreviewClose').addEventListener('click', function() { box.classList.remove('open'); });
+  box.addEventListener('click', function(e) { if (e.target === box) box.classList.remove('open'); });
+  document.addEventListener('click', function(e) {
+    var b = e.target.closest('.wl-btn'); if (b) { var item = b.closest('.wall-item'); if (item) open(item.dataset.preview); return; }
+    var c = e.target.closest('.wall-item.clickable'); if (c) { open(c.dataset.preview); return; }
+  });
+})();
+
+document.querySelectorAll('.float-prereg').forEach(function(f){
+  f.addEventListener('submit', function(e){ e.preventDefault(); window.location.href='thanks.html'; });
+});
+</script>
+</body>
+</html>

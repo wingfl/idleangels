@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>游戏特征 · DMM 预注册官网</title>
+<script src="https://libs.games.dmm.com/js/dmg_i3_tracking_tag.js"></script>
+<link rel="stylesheet" href="general/dmmheader.css">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="preview-nav.css">
+<style>
+/* 游戏特征：大图无缝轮播，中间高亮前置，两侧灰化后置 */
+#page-features { height: 100vh; overflow: hidden; }
+.feature-carousel { position: relative; display: flex; align-items: center; }
+.feature-viewport { overflow: hidden; width: 100%; }
+.feat-row { display: flex; align-items: center; gap: 20px; transition: transform .5s cubic-bezier(.25,.8,.25,1); will-change: transform; }
+.feat-card { position: relative; width: 640px; flex: none; transition: opacity .4s ease, filter .4s ease; }
+.feat-shot { width: 100%; height: 56vh; transition: box-shadow .3s ease; }
+.feat-card.active { z-index: 2; }
+.feat-card.active .feat-shot { box-shadow: 0 8px 30px rgba(0,0,0,.22); }
+.feat-card:not(.active) { opacity: .38; filter: grayscale(100%); }
+.arr-btn.feature-prev { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); z-index: 5; }
+.arr-btn.feature-next { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); z-index: 5; }
+.feat-info { text-align: center; max-width: 640px; margin: 16px auto 0; }
+.ft-name { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+.ft-desc { font-size: 14px; color: #555; line-height: 1.8; }
+</style>
+</head>
+<body>
+
+<aside class="demo-side" id="demoSide">
+  <nav class="side-body">
+    <div class="side-title">DEMO 预览导航</div>
+    <div class="side-group-title">官网页面</div>
+    <a class="side-link" href="main.html">首页</a>
+    <a class="side-link" href="rewards.html">预注册奖励</a>
+    <a class="side-link" href="worldview.html">世界观</a>
+    <a class="side-link" href="goddess.html">女神介绍</a>
+    <a class="side-link active" href="features.html">游戏特征</a>
+    <a class="side-link" href="artwork.html">资料室</a>
+    <a class="side-link" href="spec.html">运行环境</a>
+    <div class="side-group-title">独立落地页</div>
+    <a class="side-link" href="thanks.html">感谢页</a>
+    <a class="side-link" href="registered.html">完毕页</a>
+    <a class="side-link" href="legal-sell.html">特定商业交易法</a>
+    <a class="side-link" href="legal-fund.html">资金结算法</a>
+    <a class="side-link" href="contact.html">联系我们</a>
+  </nav>
+  <button class="side-toggle" id="sideToggle" title="展开/收起预览目录">收起</button>
+</aside>
+
+<header class="dmm-header">
+  <div class="dmm-logo">DMM GAMES 标头（模拟占位）</div>
+</header>
+
+<nav class="site-nav">
+  <div class="nav-row">
+    <div class="nav-logo"><div class="slot" style="width:auto;min-width:90px;padding:6px 12px;border-radius:6px;white-space:nowrap;"><span class="slot-name" style="font-size:14px;white-space:nowrap;">游戏logo</span></div></div>
+    <a class="nav-item" href="main.html">Main</a>
+    <a class="nav-item" href="rewards.html">预注册奖励</a>
+    <div class="nav-item has-sub">游戏介绍
+      <div class="sub-nav">
+        <a href="worldview.html">世界观</a>
+        <a href="goddess.html">女神介绍</a>
+        <a class="active" href="features.html">游戏特征</a>
+      </div>
+    </div>
+    <div class="nav-item has-sub">资料室
+      <div class="sub-nav"><a href="artwork.html">Art Work</a></div>
+    </div>
+    <a class="nav-item" href="spec.html">运行环境</a>
+  </div>
+  <div class="sub-panel" aria-hidden="true"></div>
+</nav>
+
+<div id="page-features" class="page-panel">
+  <section class="section">
+    <h2 class="section-title">游戏特征</h2>
+    <div class="feature-carousel">
+      <button class="arr-btn feature-prev" id="featPrev" aria-label="上一个卖点">‹</button>
+      <div class="feature-viewport">
+        <div class="feat-row" id="featRow"></div>
+      </div>
+      <button class="arr-btn feature-next" id="featNext" aria-label="下一个卖点">›</button>
+    </div>
+    <div class="feat-info">
+      <div class="ft-name" id="ftName"></div>
+      <div class="ft-desc" id="ftDesc"></div>
+    </div>
+  </section>
+</div>
+
+<form class="float-prereg" action="https://player-registration.games.dmm.com/entry" method="post">
+  <input type="hidden" name="app_id" value="demo_app_id">
+  <input type="hidden" name="finish_url" value="https://dmg.example.com/thanks.html">
+  <input type="hidden" name="registered_url" value="https://dmg.example.com/registered.html">
+  <input type="hidden" name="param_hash" value="demo_hash">
+  <button type="submit" class="btn-prereg-circle" aria-label="事前注册">事前注册</button>
+  <label class="float-notice notice-check"><input type="checkbox" name="notice" value="1"><span>接收通知邮件</span></label>
+</form>
+
+<footer class="site-footer">
+  <div class="footer-socials">
+    <a class="social-slot" href="#" target="_blank" title="社媒官号图标位">社媒</a>
+    <a class="social-slot" href="#" target="_blank" title="社媒官号图标位">社媒</a>
+    <a class="social-slot" href="#" target="_blank" title="社媒官号图标位">社媒</a>
+  </div>
+  <div class="footer-links">
+    <a href="#" target="_blank">游戏使用条款 &amp; 隐私政策</a>
+    <a href="legal-sell.html" target="_blank">特定商业交易法</a>
+    <a href="legal-fund.html" target="_blank">资金结算法</a>
+    <a href="contact.html" target="_blank">联系我们</a>
+  </div>
+  <div class="footer-copy">公司名称 + 版权声明</div>
+</footer>
+
+<script src="preview-nav.js"></script>
+<script>
+/* 游戏特征：大图无缝轮播（克隆首尾实现无限循环） */
+var FEATURE_COUNT = 5;
+var FEAT_STEP = 660;
+var featPos = 1;
+var featBusy = false;
+var FEAT_ORDER = [4, 0, 1, 2, 3, 4, 0];
+
+function featRender() {
+  var row = document.getElementById('featRow');
+  var cards = '';
+  for (var i = 0; i < FEAT_ORDER.length; i++) {
+    var r = FEAT_ORDER[i];
+    cards += '<div class="feat-card" data-real="' + r + '">'
+      + '<div class="feat-shot"><div class="slot" style="width:100%;height:100%;">'
+      + '<div class="slot-name">卖点 ' + (r + 1) + ' 实机图</div>'
+      + '<div class="slot-src">游戏实机截图</div></div></div>'
+      + '</div>';
+  }
+  row.innerHTML = cards;
+}
+function featOffset() {
+  var vp = document.querySelector('.feature-viewport');
+  return Math.max((vp.clientWidth - 640) / 2, 0);
+}
+function featApplyTransform(animate) {
+  var row = document.getElementById('featRow');
+  row.style.transition = animate ? '' : 'none';
+  row.style.transform = 'translateX(' + (featOffset() - featPos * FEAT_STEP) + 'px)';
+  if (!animate) { void row.offsetWidth; }
+}
+function featActiveReal() {
+  if (featPos === 0) return 4;
+  if (featPos === 6) return 0;
+  return featPos - 1;
+}
+function featUpdate() {
+  var real = featActiveReal();
+  var cards = document.querySelectorAll('#featRow .feat-card');
+  for (var i = 0; i < cards.length; i++) {
+    var r = parseInt(cards[i].getAttribute('data-real'), 10);
+    if (r === real) { cards[i].classList.add('active'); }
+    else { cards[i].classList.remove('active'); }
+  }
+  document.getElementById('ftName').textContent = '【卖点 ' + (real + 1) + ' 标题】';
+  document.getElementById('ftDesc').textContent = '【卖点 ' + (real + 1) + ' 说明文案】';
+}
+function featGo(dir) {
+  if (featBusy) return;
+  featBusy = true;
+  featPos += dir;
+  featUpdate();
+  featApplyTransform(true);
+  setTimeout(function() {
+    if (featPos === 6) { featPos = 1; featApplyTransform(false); }
+    else if (featPos === 0) { featPos = 5; featApplyTransform(false); }
+    featUpdate();
+    featBusy = false;
+  }, 520);
+}
+document.getElementById('featPrev').addEventListener('click', function() { featGo(-1); });
+document.getElementById('featNext').addEventListener('click', function() { featGo(1); });
+featRender();
+featApplyTransform(false);
+featUpdate();
+window.addEventListener('resize', function() { featApplyTransform(false); });
+
+document.querySelectorAll('.float-prereg').forEach(function(f){
+  f.addEventListener('submit', function(e){ e.preventDefault(); window.location.href='thanks.html'; });
+});
+</script>
+</body>
+</html>

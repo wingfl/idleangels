@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>世界观 · DMM 预注册官网</title>
+<script src="https://libs.games.dmm.com/js/dmg_i3_tracking_tag.js"></script>
+<link rel="stylesheet" href="general/dmmheader.css">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="preview-nav.css">
+<style>
+/* 世界观：一屏上下两段（上：左文右两图交错 / 下：左两图交错右文） */
+.world-head .section-title { text-align: left; margin-bottom: 16px; }
+.world-wrap { display: flex; flex-direction: column; gap: 16px; }
+.world-row { display: grid; grid-template-columns: 1.1fr 1fr; gap: 28px; align-items: center; }
+.world-row.rev { grid-template-columns: 1fr 1.1fr; }
+.world-text { line-height: 1.9; font-size: 14px; color: #444; }
+.world-text .verse { display: block; margin-bottom: 10px; }
+.world-text .dialogue { color: #8a5a00; font-weight: 600; }
+.world-stagger { position: relative; height: 260px; }
+.world-stagger .slot { position: absolute; width: 42%; height: 88%; }
+.world-stagger .slot-a { top: 0; right: 0; }
+.world-stagger .slot-b { bottom: 0; left: 0; }
+#page-worldview .section { justify-content: flex-start; }
+</style>
+</head>
+<body>
+
+<aside class="demo-side" id="demoSide">
+  <nav class="side-body">
+    <div class="side-title">DEMO 预览导航</div>
+    <div class="side-group-title">官网页面</div>
+    <a class="side-link" href="main.html">首页</a>
+    <a class="side-link" href="rewards.html">预注册奖励</a>
+    <a class="side-link active" href="worldview.html">世界观</a>
+    <a class="side-link" href="goddess.html">女神介绍</a>
+    <a class="side-link" href="features.html">游戏特征</a>
+    <a class="side-link" href="artwork.html">资料室</a>
+    <a class="side-link" href="spec.html">运行环境</a>
+    <div class="side-group-title">独立落地页</div>
+    <a class="side-link" href="thanks.html">感谢页</a>
+    <a class="side-link" href="registered.html">完毕页</a>
+    <a class="side-link" href="legal-sell.html">特定商业交易法</a>
+    <a class="side-link" href="legal-fund.html">资金结算法</a>
+    <a class="side-link" href="contact.html">联系我们</a>
+  </nav>
+  <button class="side-toggle" id="sideToggle" title="展开/收起预览目录">收起</button>
+</aside>
+
+<header class="dmm-header">
+  <div class="dmm-logo">DMM GAMES 标头（模拟占位）</div>
+</header>
+
+<nav class="site-nav">
+  <div class="nav-row">
+    <div class="nav-logo"><div class="slot" style="width:auto;min-width:90px;padding:6px 12px;border-radius:6px;white-space:nowrap;"><span class="slot-name" style="font-size:14px;white-space:nowrap;">游戏logo</span></div></div>
+    <a class="nav-item" href="main.html">Main</a>
+    <a class="nav-item" href="rewards.html">预注册奖励</a>
+    <div class="nav-item has-sub">游戏介绍
+      <div class="sub-nav">
+        <a class="active" href="worldview.html">世界观</a>
+        <a href="goddess.html">女神介绍</a>
+        <a href="features.html">游戏特征</a>
+      </div>
+    </div>
+    <div class="nav-item has-sub">资料室
+      <div class="sub-nav"><a href="artwork.html">Art Work</a></div>
+    </div>
+    <a class="nav-item" href="spec.html">运行环境</a>
+  </div>
+  <div class="sub-panel" aria-hidden="true"></div>
+</nav>
+
+<div id="page-worldview" class="page-panel">
+  <section class="section">
+    <div class="world-head">
+      <h2 class="section-title">世界观</h2>
+    </div>
+    <div class="world-wrap">
+      <div class="world-row">
+        <div class="world-text">【世界观文案位：上半段，左文】</div>
+        <div class="world-stagger">
+          <div class="slot slot-a"><div class="slot-name">世界观配图 A</div></div>
+          <div class="slot slot-b"><div class="slot-name">世界观配图 B</div></div>
+        </div>
+      </div>
+      <div class="world-row rev">
+        <div class="world-stagger">
+          <div class="slot slot-a"><div class="slot-name">世界观配图 C</div></div>
+          <div class="slot slot-b"><div class="slot-name">世界观配图 D</div></div>
+        </div>
+        <div class="world-text">【世界观文案位：下半段，右文】</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<form class="float-prereg" action="https://player-registration.games.dmm.com/entry" method="post">
+  <input type="hidden" name="app_id" value="demo_app_id">
+  <input type="hidden" name="finish_url" value="https://dmg.example.com/thanks.html">
+  <input type="hidden" name="registered_url" value="https://dmg.example.com/registered.html">
+  <input type="hidden" name="param_hash" value="demo_hash">
+  <button type="submit" class="btn-prereg-circle" aria-label="事前注册">事前注册</button>
+  <label class="float-notice notice-check"><input type="checkbox" name="notice" value="1"><span>接收通知邮件</span></label>
+</form>
+
+<footer class="site-footer">
+  <div class="footer-socials">
+    <a class="social-slot" href="#" target="_blank" title="社媒官号图标位">社媒</a>
+    <a class="social-slot" href="#" target="_blank" title="社媒官号图标位">社媒</a>
+    <a class="social-slot" href="#" target="_blank" title="社媒官号图标位">社媒</a>
+  </div>
+  <div class="footer-links">
+    <a href="#" target="_blank">游戏使用条款 &amp; 隐私政策</a>
+    <a href="legal-sell.html" target="_blank">特定商业交易法</a>
+    <a href="legal-fund.html" target="_blank">资金结算法</a>
+    <a href="contact.html" target="_blank">联系我们</a>
+  </div>
+  <div class="footer-copy">公司名称 + 版权声明</div>
+</footer>
+
+<script src="preview-nav.js"></script>
+<script>
+document.querySelectorAll('.float-prereg').forEach(function(f){
+  f.addEventListener('submit', function(e){ e.preventDefault(); window.location.href='thanks.html'; });
+});
+</script>
+</body>
+</html>

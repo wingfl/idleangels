@@ -1,0 +1,62 @@
+/* ═══════════════════════════════════════════════════════════
+   DEMO 预览导航器（Axure 式站点地图，非官网 UI）
+   全站每页（含独立落地页）都嵌入；固定左侧，页面内容为其预留空位，不遮挡。
+   ═══════════════════════════════════════════════════════════ */
+:root {
+  --side-w: 234px;         /* 展开宽度 = 列表 208 + 收起条 26 */
+  --side-collapsed-w: 26px;
+}
+
+.demo-side {
+  position: fixed; top: 0; left: 0; bottom: 0; z-index: 200;
+  display: flex; width: var(--side-w);
+  background: #141518; color: #cfd2da;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, .25);
+  transition: width .25s ease;
+}
+.side-body {
+  width: calc(var(--side-w) - 26px);
+  padding: 12px 10px; overflow-y: auto;
+  box-sizing: border-box;
+}
+/* 收起条：竖排文字，点它展开/收起 */
+.side-toggle {
+  flex: none; width: 26px; order: 2;
+  border: none; cursor: pointer;
+  background: #1d1f23; color: #8b90a0; font-size: 13px;
+  display: flex; align-items: center; justify-content: center;
+  writing-mode: vertical-rl; letter-spacing: 2px;
+}
+.side-title {
+  font-size: 13px; font-weight: 700; color: #fff;
+  padding: 4px 4px 10px; border-bottom: 1px solid #2a2d33; margin-bottom: 6px;
+}
+.side-group-title { font-size: 11px; color: #7c8190; padding: 10px 4px 4px; }
+.side-link {
+  display: block; padding: 6px 8px; border-radius: 6px;
+  color: #c6cad2; font-size: 13px; text-decoration: none;
+}
+.side-link:hover { background: #23262c; color: #fff; }
+.side-link.active { background: #c00a2f; color: #fff; }
+
+/* 收起态：只留右侧细条 */
+.demo-side.collapsed { width: var(--side-collapsed-w); }
+.demo-side.collapsed .side-body { display: none; }
+
+/* ═══ 页面内容为侧栏预留空位（不遮挡），按展开/收起联动 ═══ */
+body { padding-left: var(--side-w); transition: padding-left .25s ease; }
+body.side-collapsed { padding-left: var(--side-collapsed-w); }
+
+/* 全宽固定条整体右移，避免被侧栏压住左侧 */
+.dmm-header, .site-nav, .site-footer, .legal-bg {
+  left: var(--side-w) !important;
+}
+body.side-collapsed .dmm-header,
+body.side-collapsed .site-nav,
+body.side-collapsed .site-footer,
+body.side-collapsed .legal-bg {
+  left: var(--side-collapsed-w) !important;
+}
+/* 独立页左上角 logo（原 left:24px）额外随侧栏右移 */
+.legal-logo { left: calc(var(--side-w) + 24px) !important; }
+body.side-collapsed .legal-logo { left: calc(var(--side-collapsed-w) + 24px) !important; }
