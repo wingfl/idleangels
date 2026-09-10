@@ -15,13 +15,10 @@
 .reward-card .rv-img { height:200px; background:#f0f0f0; display:flex; align-items:center; justify-content:center; font-size:13px; color:#999; }
 .reward-card .rv-body { padding:14px 16px; text-align:center; }
 .reward-card .rv-name { font-size:16px; font-weight:700; color:#222; }
-.reward-card .rv-desc { font-size:13px; color:#666; margin-top:6px; }
-.reward-card.solo { width:440px; }
-.reward-card.solo .rv-img { height:260px; }
+.reward-card .rv-desc { font-size:13px; color:#666; margin-top:6px; line-height:1.6; }
 .reward-deliver { text-align:center; margin-top:28px; max-width:720px; margin-left:auto; margin-right:auto; }
 .reward-deliver dt { font-size:16px; font-weight:700; color:#c00a2f; margin-bottom:8px; }
 .reward-deliver dd { font-size:14px; color:#555; line-height:1.7; }
-.reward-tip { text-align:center; font-size:13px; color:#999; margin-top:12px; }
 </style>
 </head>
 <body>
@@ -74,8 +71,8 @@
     <div class="reward-wrap" id="rewardWrap"><!-- 奖励卡由 JS 渲染（数据可扩展） --></div>
     <div class="reward-deliver">
       <dl>
-        <dt>发放说明【待补充】</dt>
-        <dd>此处放「预约后如何领取 / 何时发放」等发放规则文案。</dd>
+        <dt>领取方式</dt>
+        <dd>进入游戏后通过邮箱领取。</dd>
       </dl>
     </div>
   </section>
@@ -106,26 +103,22 @@ document.querySelectorAll('.float-prereg').forEach(function(f){
   f.addEventListener('submit', function(e){ e.preventDefault(); window.location.href='thanks.html'; });
 });
 
-// 奖励数据（待游戏方补充：名称/内容/图标位/项数）。数组为空时显示占位卡。
+// 奖励数据（4 项固定奖励；图标位待美术补充为实际素材文件）
 var rewards = [
-  // { name: '事前登录特典礼包', desc: '上线后自动发放', img: '奖励主图占位' }
+  { name: '上級召喚チケット ×10', desc: '召喚画面で使い、上級召喚の必須アイテム。' },
+  { name: 'レア女神召喚チケット ×5', desc: 'レジェンド召喚、または特定のレア女神の召喚に使用可能' },
+  { name: 'ダイヤ ×500', desc: '上級通貨' },
+  { name: '神核 ×200', desc: '女神レベル上限突破に必要な専用アイテム' }
 ];
 var wrap = document.getElementById('rewardWrap');
-if (rewards.length === 0) {
-  wrap.innerHTML = '<div class="reward-card solo">'
-    + '<div class="rv-img">奖励主图占位</div>'
-    + '<div class="rv-body"><div class="rv-name">奖励名【待补充】</div>'
-    + '<div class="rv-desc">奖励内容说明【待补充】</div></div></div>';
-} else {
-  var html = '';
-  rewards.forEach(function(r, i){
-    html += '<div class="reward-card' + (i === 0 ? ' solo' : '') + '">'
-      + '<div class="rv-img">' + (r.img || r.name) + '</div>'
-      + '<div class="rv-body"><div class="rv-name">' + r.name + '</div>'
-      + '<div class="rv-desc">' + r.desc + '</div></div></div>';
-  });
-  wrap.innerHTML = html;
-}
+var html = '';
+rewards.forEach(function(r){
+  html += '<div class="reward-card">'
+    + '<div class="rv-img">' + (r.img || r.name) + '</div>'
+    + '<div class="rv-body"><div class="rv-name">' + r.name + '</div>'
+    + '<div class="rv-desc">' + r.desc + '</div></div></div>';
+});
+wrap.innerHTML = html;
 </script>
 </body>
 </html>
