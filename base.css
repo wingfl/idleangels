@@ -173,6 +173,7 @@ body.main-page .float-prereg { display: none; }
   min-height: 100vh;
   padding: 94px 0 80px;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 .page-main {
   height: 100vh;
